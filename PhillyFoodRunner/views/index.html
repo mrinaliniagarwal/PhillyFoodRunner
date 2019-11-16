@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <div style="margin: 0 auto; text-align: center;">
+    <title>PhillyFoodRunner</title>
+  </div>
+    <script src="/static/scripts/lib/jquery.min.js"></script>
+    <!-- <script src="/static/scripts/main.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/styles.css"/>
+  </head>
+  <body>
+    <div class="nav">
+      <h2>Welcome to Philly Food Runner</h2>
+      <br />
+      <% if (user) { %>
+      <p>Hi <%= user %>     </p>
+      <% } %>
+    </div>
+    <div class="main-body">
+      <p>
+        <a><img src="https://i.imgur.com/4AmSuCV.png" title="source: imgur.com" /></a>
+      </p>
+      <% if (user) { %>
+      <div>
+          <a class="btn" href="/account/logout">Logout</a>
+        <a class="btn" href="/account/login">Log in to a different account</a>
+      </div>
+      <% } else { %>
+      <a class="btn" href="/account/login">Log in to  PhillyFoodRunner</a>
+      <a class="btn" href="/account/signup">Sign up if you don't have an account yet!</a>
+      <% } %>
+      </div>
+    </div>
+  </body>
+</html>

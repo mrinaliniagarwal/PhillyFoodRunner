@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Log in page</title>
+  </head>
+  <link rel="stylesheet" type="text/css" href="/static/styles/styles.css"/>
+	<script>
+    function validateForm(){
+      var username =loginForm.username;
+      var password =loginForm.password;
+      
+      if(username.value==""){
+        username.focus()
+        alert("Please enter a username");
+        return false;
+      }	
+      if(password.value==""){
+        alert("Please enter a password");
+        password.focus()
+        return false;
+      }
+      return true;
+    }
+    </script>
+  <body>
+    <h1>Log in</h1>
+    <form  name="loginForm" onsubmit="return validateForm()" method="POST" >
+      Username: <br />
+      <input type="text" name="username" /> <br />
+      Password: <br />
+      <input type="password" name="password" /> <br />
+      <button type="submit">Log in</button>
+    </form>
+    <% if ( message.length > 0 ) { %> 
+      <p>Error: Invalid username or password</p>
+    <% } %>
+  </body>
+</html>

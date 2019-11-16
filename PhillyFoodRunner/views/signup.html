@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Sign up page</title>
+  </head>
+  <link rel="stylesheet" type="text/css" href="/static/styles/styles.css"/>
+
+  <body>
+    <h1>Sign up</h1>
+    <form method="POST">
+      Username: <br />
+      <input type="text" name="username" required/> <br />
+      Password: <br />
+      <input type="password" name="password" required/> <br />
+      Name: <br />
+      <input type="text" name="name" required/> <br />     
+      Address: <br />
+      <input type="text" name="address"required /> <br />
+      Email: <br />
+      <input type="email" name="email" required/> <br />
+      Hours of Operation start: <br />
+      <input type="time" id="startTime" name="startTime"
+       min="09:00" max="18:00" required>  <br />
+       Hours of Operation end: <br />
+       <input type="time" id="endTime" name="endTime"
+       min="09:00" max="18:00" required> <br />   
+       
+      <button type="submit">Sign up</button>
+
+      <% if ( message.length > 0 ) { %> 
+        <p>Error: This username is already taken</p>
+      <% } %>
+
+    </form>
+  </body>
+</html>

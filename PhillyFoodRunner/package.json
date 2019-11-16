@@ -1,0 +1,28 @@
+{
+  "name": "hw5-rework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint routes models server.js",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "cookie-session": "^2.0.0-beta.3",
+    "ejs": "^2.7.1",
+    "eslint": "^6.3.0",
+    "expres": "0.0.5",
+    "express": "^4.17.1",
+    "mockgoose": "^7.3.5",
+    "mongodb": "^3.3.3",
+    "mongoose": "^5.7.8",
+    "nodemon": "^1.18.4"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
+}
