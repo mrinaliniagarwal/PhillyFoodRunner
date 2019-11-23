@@ -22,7 +22,9 @@
     "mongoose": "^5.7.8",
     "nodemon": "^1.18.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "webpack": "^4.41.2"
+  },
   "keywords": [],
   "description": ""
 }
