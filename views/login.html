@@ -21,14 +21,18 @@
       return true;
     }
     </script>
-  <body>
+  <body style="text-align:center;">
     <h1>Log in</h1>
     <form  name="loginForm" onsubmit="return validateForm()" method="POST" >
       Username: <br />
       <input type="text" name="username" /> <br />
       Password: <br />
       <input type="password" name="password" /> <br />
-      <button type="submit">Log in</button>
+      <br />
+      <button class="blackBtn" type="submit">Log in</button>
+      <br />
+      <br />
+      <a class="blackBtn" href="/">Back</a>
     </form>
     <% if ( message.length > 0 ) { %> 
       <p>Error: Invalid username or password</p>

@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Update Store Supply Page</title>
+  </head>
+  <link rel="stylesheet" type="text/css" href="/static/styles/styles.css"/>
+
+  <body style="text-align:center;">
+    <br />
+    <h1>Update Store Supply</h1>
+    <form method="POST" >
+       Paper supplies: <br />
+      <input type="text" name="paper" value="<%= paper_amt %>" required/> <br />
+      <br />
+      Envelopes and Boxes: <br />
+      <input type="text" name="box" value="<%= box_amt %>" required/> <br />
+      <br />
+      Notebooks and Notepads: <br />
+      <input type="text" name="notebook" value="<%= notebook_amt %>" required/> <br /> 
+      <br />    
+      Filing Cabinet: <br />
+      <input type="text" name="cabinet" value="<%= cabinet_amt %>" required/> <br />
+      <br />
+      Binder Items: <br />
+      <input type="text" name="binder" value="<%= binder_amt %>" required/> <br />
+      <br />
+      Small Office Supplies: <br />
+      <input type="text" name="small" value="<%= small_amt %>" required/> <br />
+      <br />
+      Writing Implements: <br />
+      <input type="text" name="writing" value="<%= writing_amt %>" required/> <br />
+      <br />
+      Office Storage: <br />
+      <input type="text" name="storage" value="<%= storage_amt %>" required/> <br />
+      <br />
+      Electrical Items: <br />
+      <input type="text" name="eletrical" value="<%= eletrical_amt %>" required/> <br />
+      <br />
+      <br />
+      <button class="blackBtn" type="submit">Submit</button>
+      <br />
+      <br />
+      <br />
+      <a class="blackBtn" href="/">Back</a>
+    </form>
+  </body>
+</html>

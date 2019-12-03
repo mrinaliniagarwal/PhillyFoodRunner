@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<canvas id="bar-chart" width="200" height="100"></canvas>
+<script>
+  //Data
+  var x = "<%=supply%>";
+  var storeData = x.split(',');
+
+  // Bar chart
+  new Chart(document.getElementById("bar-chart"), {
+      type: 'bar',
+      data: {
+        labels: ["Paper supplies", "Envelopes and Boxes", "Notebooks and Notepads", 
+        "Binder Items", "Filing Cabinet", "Small Office Supplies", "Writing Implements", "Office Storage", "Electrical Items"],
+        datasets: [
+          {
+            label: "Store Supply (units)",
+            backgroundColor: ["#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999"],
+            data: storeData
+          }
+        ]
+      },
+      options: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: 'Current Store Supply'
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    suggestedMin: 0
+                }
+            }]
+        }
+      }
+  });
+</script>
+</html>

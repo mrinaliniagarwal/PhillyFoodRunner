@@ -1,9 +1,9 @@
 var express = require('express')
 var router = express.Router()
 var isAuthenticated = require('../middlewares/isAuthenticated')
-var Restaurant = require('../models/restaurant.js')
+var Factory = require('../models/factory.js')
 
-router.get('/signup', function(req, res) {
+router.get('/signup', function(_, res) {
   res.render('signup', { message: ''})
 })
 
@@ -13,12 +13,29 @@ router.post('/signup', function(req, res, next) {
   var name = req.body.name
   var address = req.body.address
   var email = req.body.email
+  var startTime = req.body.startTime
+  var endTime = req.body.endTime
+  var hoursOfOperation = { 
+	    startTime: startTime,
+	    endTime: endTime,
+     }
+  var paperSupply = {supplytype: 'Paper supplies', amount: 0};
+  var boxSupply = {supplytype: 'Envelopes and Boxes', amount: 0};
+  var notebookSupply = {supplytype: 'Notebooks and Notepads', amount: 0};
+  var binderSupply = {supplytype: 'Binder Items', amount: 0};
+  var cabinetSupply = {supplytype: 'Filing Cabinet', amount: 0};
+  var smallOfficeSupply = {supplytype: 'Small Office Supplies', amount: 0};
+  var writingSupply = {supplytype: 'Writing Implements', amount: 0};
+  var storageSupply = {supplytype: 'Office Storage', amount: 0};
+  var electricalSupply = {supplytype: 'Electrical Items', amount: 0};
+
+  var allSupplies =  [paperSupply, boxSupply, notebookSupply, binderSupply, cabinetSupply, smallOfficeSupply, writingSupply, storageSupply, electricalSupply]; 
   
-  var u = new Restaurant({ username: username, password: password, name: name, address: address, email: email})
+  var u = new Factory({ username: username, password: password, name: name, address: address, email: email})
   u.save(function(err) {
     if (err) {
       if (err.code === 11000 ) {
-        res.render('signup',  { message: 'Error : User already exists'});
+        res.render('signup',  { message: 'Error : Factory username already exists'});
         return;
       }
     }
@@ -37,7 +54,7 @@ router.get('/login', function(req, res) {
 router.post('/login', function(req, res, next) {
   var username = req.body.username
   var password = req.body.password
-  Restaurant.findOne({ username: username, password: password }, function(
+  Factory.findOne({ username: username, password: password }, function(
     err,
     result
   ) {

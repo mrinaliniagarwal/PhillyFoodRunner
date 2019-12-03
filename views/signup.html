@@ -4,7 +4,7 @@
   </head>
   <link rel="stylesheet" type="text/css" href="/static/styles/styles.css"/>
 
-  <body>
+  <body style="text-align:center;">
     <h1>Sign up</h1>
     <form method="POST">
       Username: <br />
@@ -23,8 +23,12 @@
        Hours of Operation end: <br />
        <input type="time" id="endTime" name="endTime"
        min="09:00" max="18:00" required> <br />   
-       
-      <button type="submit">Sign up</button>
+		<br /> 
+      <button class="blackBtn" type="submit">Sign up</button>
+      <br /> 
+      <br /> 
+      <a class="blackBtn" href="/">Back</a>
+      <br /> 
 
       <% if ( message.length > 0 ) { %> 
         <p>Error: This username is already taken</p>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Store Information</title>
+  </head>
+  <link rel="stylesheet" type="text/css" href="/static/styles/styles.css"/>
+
+  <body style="text-align:center;">
+    <br />
+    <h1>Edit Store Information</h1>
+    
+    <form method="POST">
+    
+	 <h2>User <%= storeName %>:<br /></h2>
+	 Store Name: 
+	 <input type="text" name="newName" value="<%= name %>" required/> <br /><br />
+	 Store Email: 
+	 <input type="text" name="newEmail" value="<%= email %>" required/> <br /><br />
+	 Store Address: 
+	 <input type="text" name="newAddress" value="<%= address %>" required/> <br /><br />
+	 Hours of Operation start: 
+      <input type="time" id="startTime" name="newStartTime" value="<%= startTime %>"
+       min="09:00" max="18:00" required>  <br /><br />
+     Hours of Operation end: 
+       <input type="time" id="endTime" name="newEndTime" value="<%= endTime %>"
+       min="09:00" max="18:00" required> <br />   <br />
+	   <br />
+	   <br />
+      <br />
+      <button class="blackBtn" type="submit">Save</button>
+      <br />
+      <br />
+      <br />
+      <a class="blackBtn" href="/">Back</a>
+    </form>
+  </body>
+</html>
+
