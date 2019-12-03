@@ -186,7 +186,7 @@ next()
   })
   
   app.get('/graph', function(req, res) {
-    Factory.find({username: req.session.user}, {"allSupplies" : 1}, (err, factory) => { 
+    Factory.find({username: req.session.user}, {"storeSupply" : 1}, (err, factory) => { 
       if(err) {
         res.type('html').status(200);
         console.log('uh oh' + err);
@@ -199,7 +199,7 @@ next()
           return;
         }
         var supplyData = [];
-        factory[0].allSupplies.forEach((supply) => { 
+        factory[0].storeSupply.forEach((supply) => { 
           supplyData.push(Number(supply.amount));
         });     
         res.render('graph', {supply: supplyData});

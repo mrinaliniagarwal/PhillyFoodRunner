@@ -11,7 +11,7 @@ var factorySchema = new mongoose.Schema({
   name: { type: String},
   address: { type: String},
   email: { type: String },
-  allSupplies: [{supplytype: String, amount: Number}], 
+  storeSupply: [{supplytype: String, amount: Number}], 
   hoursOfOperation: { 
     startTime: {type : String},
     endTime: {type : String},
